@@ -2,7 +2,7 @@
 require 'openssl'
 require 'base64'
 require 'time'
-require 'uuid'
+require 'securerandom'
 require 'saml_idp/request'
 module SamlIdp
   module Controller
@@ -62,11 +62,11 @@ module SamlIdp
     end
 
     def get_saml_response_id
-      UUID.generate
+      SecureRandom.uuid
     end
 
     def get_saml_reference_id
-      UUID.generate
+      SecureRandom.uuid
     end
   end
 end
